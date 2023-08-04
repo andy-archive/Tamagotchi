@@ -18,6 +18,7 @@
 		38D431D52A7D1958004CFC5A /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431D42A7D1958004CFC5A /* Owner.swift */; };
 		38D431DE2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431DC2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift */; };
 		38D431DF2A7D2165004CFC5A /* VirtualPetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D431DD2A7D2165004CFC5A /* VirtualPetCollectionViewCell.xib */; };
+		38D431E22A7D378F004CFC5A /* DetailPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431E12A7D378F004CFC5A /* DetailPopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		38D431D42A7D1958004CFC5A /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		38D431DC2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPetCollectionViewCell.swift; sourceTree = "<group>"; };
 		38D431DD2A7D2165004CFC5A /* VirtualPetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VirtualPetCollectionViewCell.xib; sourceTree = "<group>"; };
+		38D431E12A7D378F004CFC5A /* DetailPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		38D431C42A7CD150004CFC5A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				38D431E02A7D371E004CFC5A /* DetailPopupView */,
 				38D431C62A7D1036004CFC5A /* SelectionView */,
 			);
 			path = View;
@@ -120,6 +123,14 @@
 				38D431D42A7D1958004CFC5A /* Owner.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		38D431E02A7D371E004CFC5A /* DetailPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				38D431E12A7D378F004CFC5A /* DetailPopupViewController.swift */,
+			);
+			path = DetailPopupView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D431E22A7D378F004CFC5A /* DetailPopupViewController.swift in Sources */,
 				38D431B02A7CD0E8004CFC5A /* AppDelegate.swift in Sources */,
 				38D431D52A7D1958004CFC5A /* Owner.swift in Sources */,
 				38D431C82A7D11E5004CFC5A /* SelectionViewController.swift in Sources */,
