@@ -43,7 +43,7 @@ class SelectionViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: width / 3, height: width / 3)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
+        layout.minimumLineSpacing = 30
         layout.minimumInteritemSpacing = spacing
         virtualPetCollectionView.collectionViewLayout = layout
     }
