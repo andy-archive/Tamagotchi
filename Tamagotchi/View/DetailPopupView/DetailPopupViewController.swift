@@ -32,6 +32,18 @@ class DetailPopupViewController: UIViewController {
         configureDetailPopupView(virtualPet: virtualPet)
     }
     
+    @IBAction func cancelButtonClicked(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func mainButtonClicked(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
+        
+        vc.virtualPet = virtualPet
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func configureDetailPopupView(virtualPet: VirtualPet) {
         nameLabel.text = virtualPet.name
         introductionLabel.text = virtualPet.introduction
@@ -63,16 +75,6 @@ class DetailPopupViewController: UIViewController {
         beginButton.titleLabel?.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         beginButton.layer.borderWidth = 0.5
         beginButton.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-    }
-    
-    @IBAction func cancelButtonClicked(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func mainButtonClicked(_ sender: UIButton) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
-        
-        navigationController?.pushViewController(vc, animated: true)
     }
     
 
