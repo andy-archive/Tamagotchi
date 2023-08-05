@@ -69,5 +69,11 @@ class DetailPopupViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func mainButtonClicked(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
 }

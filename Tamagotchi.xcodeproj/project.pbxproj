@@ -19,6 +19,7 @@
 		38D431DE2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431DC2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift */; };
 		38D431DF2A7D2165004CFC5A /* VirtualPetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D431DD2A7D2165004CFC5A /* VirtualPetCollectionViewCell.xib */; };
 		38D431E22A7D378F004CFC5A /* DetailPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431E12A7D378F004CFC5A /* DetailPopupViewController.swift */; };
+		38D431E52A7E2AD1004CFC5A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431E42A7E2AD1004CFC5A /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		38D431DC2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPetCollectionViewCell.swift; sourceTree = "<group>"; };
 		38D431DD2A7D2165004CFC5A /* VirtualPetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VirtualPetCollectionViewCell.xib; sourceTree = "<group>"; };
 		38D431E12A7D378F004CFC5A /* DetailPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupViewController.swift; sourceTree = "<group>"; };
+		38D431E42A7E2AD1004CFC5A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		38D431C42A7CD150004CFC5A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				38D431E32A7E2AB9004CFC5A /* MainView */,
 				38D431E02A7D371E004CFC5A /* DetailPopupView */,
 				38D431C62A7D1036004CFC5A /* SelectionView */,
 			);
@@ -131,6 +134,14 @@
 				38D431E12A7D378F004CFC5A /* DetailPopupViewController.swift */,
 			);
 			path = DetailPopupView;
+			sourceTree = "<group>";
+		};
+		38D431E32A7E2AB9004CFC5A /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				38D431E42A7E2AD1004CFC5A /* MainViewController.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +222,7 @@
 				38D431C82A7D11E5004CFC5A /* SelectionViewController.swift in Sources */,
 				38D431B22A7CD0E8004CFC5A /* SceneDelegate.swift in Sources */,
 				38D431DE2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift in Sources */,
+				38D431E52A7E2AD1004CFC5A /* MainViewController.swift in Sources */,
 				38D431CD2A7D12D8004CFC5A /* VirtualPet.swift in Sources */,
 				38D431D32A7D17A5004CFC5A /* VirtualPetInfo.swift in Sources */,
 			);
