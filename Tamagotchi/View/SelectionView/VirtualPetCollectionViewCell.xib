@@ -70,6 +70,7 @@
             </constraints>
             <size key="customSize" width="154" height="165"/>
             <connections>
+                <outlet property="cellBackView" destination="Ddz-oj-pIj" id="WHk-na-eN7"/>
                 <outlet property="nameLabel" destination="1OM-zZ-rRD" id="vf7-Dn-juk"/>
                 <outlet property="nameLabelBackView" destination="QAl-Q0-btl" id="3QR-mx-Zh6"/>
                 <outlet property="profileImageView" destination="ejV-X1-jQO" id="RYx-Wt-43c"/>

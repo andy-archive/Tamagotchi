@@ -20,6 +20,7 @@ class SelectionViewController: UIViewController {
         super.viewDidLoad()
         
         title = "다마고치 선택하기"
+        backView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
         configureVirtualPetCollectionView()
         configureVirtualPetCollectionViewLayout()
@@ -29,10 +30,11 @@ class SelectionViewController: UIViewController {
         virtualPetCollectionView.delegate = self
         virtualPetCollectionView.dataSource = self
         
+        virtualPetCollectionView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        
         let nib = UINib(nibName: VirtualPetCollectionViewCell.identifier, bundle: nil)
         
         virtualPetCollectionView.register(nib, forCellWithReuseIdentifier: VirtualPetCollectionViewCell.identifier)
-        
     }
     
     func configureVirtualPetCollectionViewLayout() {
@@ -64,6 +66,19 @@ extension SelectionViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.configureCell(row: row)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailPopupViewController.identifier) as? DetailPopupViewController else { return }
+        
+        vc.virtualPet = virtualPetInfo.list[indexPath.row]
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        nav.modalPresentationStyle = .custom
+        
+        present(nav, animated: true)
+        
     }
     
     

@@ -11,6 +11,7 @@ class VirtualPetCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "VirtualPetCollectionViewCell"
     
+    @IBOutlet weak var cellBackView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabelBackView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,6 +19,7 @@ class VirtualPetCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        cellBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         nameLabelBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         nameLabelBackView.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         nameLabelBackView.layer.borderWidth = 0.5
