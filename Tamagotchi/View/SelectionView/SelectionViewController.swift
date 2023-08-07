@@ -72,6 +72,7 @@ extension SelectionViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailPopupViewController.identifier) as? DetailPopupViewController else { return }
         
         vc.virtualPet = virtualPetInfo.list[indexPath.row]
+        vc.petNumber = indexPath.row + 1
         
         let nav = UINavigationController(rootViewController: vc)
         

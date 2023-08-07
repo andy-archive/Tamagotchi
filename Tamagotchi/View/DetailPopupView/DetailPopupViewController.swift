@@ -11,6 +11,8 @@ class DetailPopupViewController: UIViewController {
     
     static let identifier = "DetailPopupViewController"
     
+    var petNumber = 0
+    
     @IBOutlet var backView: UIView!
     @IBOutlet weak var popupBackView: UIView!
     
@@ -40,6 +42,7 @@ class DetailPopupViewController: UIViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
         
         vc.virtualPet = virtualPet
+        vc.petNumber = petNumber
         
         navigationController?.pushViewController(vc, animated: true)
     }
