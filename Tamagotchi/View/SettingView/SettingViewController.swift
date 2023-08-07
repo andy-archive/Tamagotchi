@@ -44,12 +44,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return setting.list.count
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier) as? SettingTableViewCell else {
-            print("ERROR")
             return UITableViewCell()
         }
         let row = setting.list[indexPath.row]
@@ -57,5 +56,16 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(row: row)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: NameChangeViewController.identifier) as? NameChangeViewController else { return }
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 1 {
+            
+        } else {
+            
+        }
     }
 }
