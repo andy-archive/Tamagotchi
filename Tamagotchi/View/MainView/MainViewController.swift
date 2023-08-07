@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
     var virtualPet: VirtualPet?
     var riceGrainCount = 0
     var waterDropCount = 0
+    let randomMessage = ["대장님 오늘 과제 하셨어요?", "깃허브 푸시 하셨어요?", "배고파요 :(", "목말라요 ㅠㅠ", "밥 주세요 :)", "기분이 좋은 하루에요 XD"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,20 +47,22 @@ class MainViewController: UIViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else { return }
         
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     @IBAction func riceGrainTapped(_ sender: UIButton) {
         riceGrainCount += 1
+        messageLabel.text = randomMessage.randomElement() ?? "안녕하세요"
         view.endEditing(true)
     }
     
     @IBAction func waterDropTapped(_ sender: UIButton) {
         waterDropCount += 1
+        messageLabel.text = randomMessage.randomElement() ?? "안녕하세요"
         view.endEditing(true)
     }
     
     @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+        messageLabel.text = randomMessage.randomElement() ?? "안녕하세요"
         view.endEditing(true)
     }
 }
@@ -68,6 +71,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController {
     func configureView(virtualPet: VirtualPet) {
+        messageLabel.text = randomMessage.randomElement() ?? "안녕하세요"
         messageBubbleImageView.image = UIImage(named: "bubble")
         virtualPetImageView.image = UIImage(named: virtualPet.presentImage)
         nameLabel.text = virtualPet.name
@@ -80,6 +84,7 @@ extension MainViewController {
         messageBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
         messageLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        messageLabel.numberOfLines = 0
         
         nameLabelBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         nameLabelBackView.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
