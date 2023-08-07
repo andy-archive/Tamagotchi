@@ -31,11 +31,22 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let virtualPet else { return }
-        
         title = "대장님의 다마고치"
         
+        guard let virtualPet else { return }
+        
+        let settingImage = UIImage(systemName: "person.circle")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(settingButtonClicked))
+        
         configureView(virtualPet: virtualPet)
+    }
+    
+    @objc func settingButtonClicked(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else { return }
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func riceGrainTapped(_ sender: UIButton) {

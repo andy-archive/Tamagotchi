@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		385A817C2A80CB3D00A8D72C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A817B2A80CB3D00A8D72C /* SettingViewController.swift */; };
+		385A817E2A80D51700A8D72C /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A817D2A80D51700A8D72C /* Setting.swift */; };
+		385A81832A80D62C00A8D72C /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A81812A80D62C00A8D72C /* SettingTableViewCell.swift */; };
+		385A81862A80D6E500A8D72C /* SettingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A81852A80D6E500A8D72C /* SettingInfo.swift */; };
 		38D431B02A7CD0E8004CFC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431AF2A7CD0E8004CFC5A /* AppDelegate.swift */; };
 		38D431B22A7CD0E8004CFC5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431B12A7CD0E8004CFC5A /* SceneDelegate.swift */; };
 		38D431B72A7CD0E8004CFC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D431B52A7CD0E8004CFC5A /* Main.storyboard */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		385A817B2A80CB3D00A8D72C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		385A817D2A80D51700A8D72C /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		385A81812A80D62C00A8D72C /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		385A81852A80D6E500A8D72C /* SettingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfo.swift; sourceTree = "<group>"; };
 		38D431AC2A7CD0E8004CFC5A /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D431AF2A7CD0E8004CFC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38D431B12A7CD0E8004CFC5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		385A817A2A80CB2D00A8D72C /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				385A817B2A80CB3D00A8D72C /* SettingViewController.swift */,
+				385A81812A80D62C00A8D72C /* SettingTableViewCell.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
 		38D431A32A7CD0E8004CFC5A = {
 			isa = PBXGroup;
 			children = (
@@ -92,9 +109,10 @@
 		38D431C42A7CD150004CFC5A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				38D431E32A7E2AB9004CFC5A /* MainView */,
-				38D431E02A7D371E004CFC5A /* DetailPopupView */,
 				38D431C62A7D1036004CFC5A /* SelectionView */,
+				38D431E02A7D371E004CFC5A /* DetailPopupView */,
+				38D431E32A7E2AB9004CFC5A /* MainView */,
+				385A817A2A80CB2D00A8D72C /* SettingView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +142,8 @@
 				38D431CC2A7D12D8004CFC5A /* VirtualPet.swift */,
 				38D431D22A7D17A5004CFC5A /* VirtualPetInfo.swift */,
 				38D431D42A7D1958004CFC5A /* Owner.swift */,
+				385A817D2A80D51700A8D72C /* Setting.swift */,
+				385A81852A80D6E500A8D72C /* SettingInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,9 +241,13 @@
 				38D431D52A7D1958004CFC5A /* Owner.swift in Sources */,
 				38D431C82A7D11E5004CFC5A /* SelectionViewController.swift in Sources */,
 				38D431B22A7CD0E8004CFC5A /* SceneDelegate.swift in Sources */,
+				385A817C2A80CB3D00A8D72C /* SettingViewController.swift in Sources */,
+				385A81832A80D62C00A8D72C /* SettingTableViewCell.swift in Sources */,
+				385A817E2A80D51700A8D72C /* Setting.swift in Sources */,
 				38D431DE2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift in Sources */,
 				38D431E52A7E2AD1004CFC5A /* MainViewController.swift in Sources */,
 				38D431CD2A7D12D8004CFC5A /* VirtualPet.swift in Sources */,
+				385A81862A80D6E500A8D72C /* SettingInfo.swift in Sources */,
 				38D431D32A7D17A5004CFC5A /* VirtualPetInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
