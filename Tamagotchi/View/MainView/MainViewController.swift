@@ -12,25 +12,22 @@ class MainViewController: UIViewController {
     static let identifier = "MainViewController"
     
     @IBOutlet var backView: UIView!
-    
     @IBOutlet weak var messageBackView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageBubbleImageView: UIImageView!
-    
     @IBOutlet weak var virtualPetImageView: UIImageView!
-    
     @IBOutlet weak var nameLabelBackView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statLabel: UILabel!
-    
     @IBOutlet weak var riceGrainTextField: UITextField!
     @IBOutlet weak var waterDropTextField: UITextField!
-    
     @IBOutlet weak var riceGrainButton: UIButton!
     @IBOutlet weak var waterDropButton: UIButton!
     
     var virtualPet: VirtualPet?
-
+    var riceGrainCount = 0
+    var waterDropCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +38,24 @@ class MainViewController: UIViewController {
         configureView(virtualPet: virtualPet)
     }
     
+    @IBAction func riceGrainTapped(_ sender: UIButton) {
+        riceGrainCount += 1
+        view.endEditing(true)
+    }
+    
+    @IBAction func waterDropTapped(_ sender: UIButton) {
+        waterDropCount += 1
+        view.endEditing(true)
+    }
+    
+    @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+}
+
+// MARK: configureView
+
+extension MainViewController {
     func configureView(virtualPet: VirtualPet) {
         messageBubbleImageView.image = UIImage(named: "bubble")
         virtualPetImageView.image = UIImage(named: virtualPet.presentImage)
@@ -67,9 +82,11 @@ class MainViewController: UIViewController {
         statLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
         riceGrainTextField.textAlignment = .center
+        riceGrainTextField.keyboardType = .numberPad
         riceGrainTextField.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
         waterDropTextField.textAlignment = .center
+        waterDropTextField.keyboardType = .numberPad
         waterDropTextField.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
         riceGrainButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)

@@ -78,7 +78,6 @@ extension SelectionViewController: UICollectionViewDelegate, UICollectionViewDat
         nav.modalPresentationStyle = .custom
         
         present(nav, animated: true)
-        
     }
     
     

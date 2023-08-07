@@ -36,7 +36,7 @@ class DetailPopupViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func mainButtonClicked(_ sender: UIButton) {
+    @IBAction func beginButtonClicked(_ sender: UIButton) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
         
         vc.virtualPet = virtualPet
