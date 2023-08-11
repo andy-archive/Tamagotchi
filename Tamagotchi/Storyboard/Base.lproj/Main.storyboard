@@ -435,15 +435,22 @@
                                 <rect key="frame" x="28" y="69" width="337" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="endEditingTextField:" destination="OD2-Ps-axd" eventType="editingDidEndOnExit" id="1Bl-W7-i6e"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gea-Cb-7Ml"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="PHS-XP-LWf" firstAttribute="top" secondItem="Gea-Cb-7Ml" secondAttribute="top" constant="10" id="EYi-wG-aQ8"/>
                             <constraint firstItem="PHS-XP-LWf" firstAttribute="leading" secondItem="Gea-Cb-7Ml" secondAttribute="leading" constant="28" id="GqI-mN-Lvs"/>
                             <constraint firstItem="Gea-Cb-7Ml" firstAttribute="trailing" secondItem="PHS-XP-LWf" secondAttribute="trailing" constant="28" id="Jxe-7c-jK9"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="fm2-vC-nzG" appends="YES" id="lgg-3N-jTx"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="backView" destination="7it-05-bgi" id="pvM-OG-FFi"/>
@@ -451,6 +458,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iy2-vG-zVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fm2-vC-nzG">
+                    <connections>
+                        <action selector="tagGestureTapped:" destination="OD2-Ps-axd" id="7Lr-qL-u4W"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3692" y="694"/>
         </scene>

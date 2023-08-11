@@ -20,7 +20,6 @@ class NameChangeViewController: UIViewController {
         configureView()
         configureNavigationBar()
     }
-
     
     func configureView() {
         backView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
@@ -31,10 +30,15 @@ class NameChangeViewController: UIViewController {
     }
     
     func configureNavigationBar() {
-        title = "대장님 이름 정하기"
-        
+        title = "주인 이름 정하기"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(changeButtonClicked))
-        
+    }
+    
+    @IBAction func endEditingTextField(_ sender: UITextField) {
+    }
+    
+    @IBAction func tagGestureTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     @objc func changeButtonClicked(_ sender: UIButton) {
@@ -49,5 +53,4 @@ class NameChangeViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
-    
 }
