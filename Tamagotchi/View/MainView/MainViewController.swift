@@ -42,11 +42,6 @@ class MainViewController: UIViewController {
         let ownerName = userDefaults.string(forKey: "ownerName") ?? "대장님"
         self.title = "\(ownerName)님의 다마고치"
     }
-    
-    func configureNavigationBar() {
-        let settingImage = UIImage(systemName: "person.circle")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(settingButtonClicked))
-    }
 
     @IBAction func riceGrainTapped(_ sender: UIButton) {
         guard let riceGrainText = riceGrainTextField.text else { return }
@@ -107,17 +102,61 @@ class MainViewController: UIViewController {
     }
 }
 
-// MARK: updateView
+// MARK: update View
 
 extension MainViewController {
+    func configureNavigationBar() {
+        let settingImage = UIImage(systemName: "person.circle")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(settingButtonClicked))
+    }
+    
+    func configureView(virtualPet: VirtualPet) {
+        if userDefaults.integer(forKey: "\(petNumber) image") == 0 {
+            userDefaults.set(1, forKey: "\(petNumber) image")
+        }
+        
+        messageLabel.text = "안녕하세요"
+        messageBubbleImageView.image = UIImage(named: "bubble")
+        virtualPetImageView.image = UIImage(named: "\(petNumber)-\(userDefaults.integer(forKey: "\(petNumber) image"))")
+        nameLabel.text = virtualPet.name
+        statLabel.text = "Lv.\(userDefaults.integer(forKey: "\(petNumber) level")) | 밥알 \(userDefaults.integer(forKey: "\(petNumber) riceGrainCount"))개 | 물방울 \(userDefaults.integer(forKey: "\(petNumber) waterDropCount"))개"
+        riceGrainTextField.placeholder = "밥 주세요"
+        waterDropTextField.placeholder = "물 주세요"
+
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+
+        messageBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+
+        messageLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        messageLabel.numberOfLines = 0
+
+        nameLabelBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        nameLabelBackView.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        nameLabelBackView.layer.borderWidth = 0.5
+        nameLabelBackView.layer.cornerRadius = 5
+
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        nameLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+
+        statLabel.font = UIFont.boldSystemFont(ofSize: 13)
+        statLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+
+        riceGrainTextField.textAlignment = .center
+        riceGrainTextField.keyboardType = .numberPad
+        riceGrainTextField.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+
+        waterDropTextField.textAlignment = .center
+        waterDropTextField.keyboardType = .numberPad
+        waterDropTextField.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+
+        riceGrainButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        waterDropButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+    }
+    
     func updateView() {
         levelCheck()
-        virtualPetImageView.image = UIImage(named: "\(petNumber)-\(userDefaults.integer(forKey: "\(petNumber) image"))")
-        statLabel.text = "Lv.\(userDefaults.integer(forKey: "\(petNumber) level")) | 밥알 \(userDefaults.integer(forKey: "\(petNumber) riceGrainCount"))개 | 물방울 \(userDefaults.integer(forKey: "\(petNumber) waterDropCount"))개"
-        
-        let ownerName = userDefaults.string(forKey: "ownerName") ?? ""
-        let randomMessage = ["\(ownerName)님 오늘 과제 하셨어요?", "깃허브 푸시 하셨어요?", "배고파요 :(", "목말라요 ㅠㅠ", "밥 주세요 :)", "기분이 좋은 하루에요 XD"]
-        messageLabel.text = randomMessage.randomElement() ?? "안녕하세요"
+        updateInfo()
+        updateRandomMessage()
     }
 
     func levelCheck() {
@@ -163,47 +202,15 @@ extension MainViewController {
             break
         }
     }
-}
-
-// MARK: configureView
-
-extension MainViewController {
-    func configureView(virtualPet: VirtualPet) {
-        messageLabel.text = "안녕하세요"
-        messageBubbleImageView.image = UIImage(named: "bubble")
+    
+    func updateInfo() {
         virtualPetImageView.image = UIImage(named: "\(petNumber)-\(userDefaults.integer(forKey: "\(petNumber) image"))")
-        nameLabel.text = virtualPet.name
         statLabel.text = "Lv.\(userDefaults.integer(forKey: "\(petNumber) level")) | 밥알 \(userDefaults.integer(forKey: "\(petNumber) riceGrainCount"))개 | 물방울 \(userDefaults.integer(forKey: "\(petNumber) waterDropCount"))개"
-        riceGrainTextField.placeholder = "밥 줘"
-        waterDropTextField.placeholder = "물 줘"
-
-        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-
-        messageBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-
-        messageLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        messageLabel.numberOfLines = 0
-
-        nameLabelBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        nameLabelBackView.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        nameLabelBackView.layer.borderWidth = 0.5
-        nameLabelBackView.layer.cornerRadius = 5
-
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        nameLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-
-        statLabel.font = UIFont.boldSystemFont(ofSize: 13)
-        statLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-
-        riceGrainTextField.textAlignment = .center
-        riceGrainTextField.keyboardType = .numberPad
-        riceGrainTextField.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-
-        waterDropTextField.textAlignment = .center
-        waterDropTextField.keyboardType = .numberPad
-        waterDropTextField.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-
-        riceGrainButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        waterDropButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+    }
+    
+    func updateRandomMessage() {
+        let ownerName = userDefaults.string(forKey: "ownerName") ?? ""
+        let randomMessage = ["\(ownerName)님 오늘 과제 하셨어요?", "깃허브 푸시 하셨어요?", "배고파요 :(", "목말라요 ㅠㅠ", "밥 주세요 :)", "기분이 좋은 하루에요 XD"]
+        messageLabel.text = randomMessage.randomElement() ?? "안녕하세요"
     }
 }
