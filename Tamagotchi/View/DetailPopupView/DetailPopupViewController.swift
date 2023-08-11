@@ -69,12 +69,12 @@ class DetailPopupViewController: UIViewController {
         introductionLabel.numberOfLines = 0
         introductionLabel.textAlignment = .center
         
-        cancelButton.titleLabel?.text = "취소"
+        cancelButton.setTitle("취소", for: .normal)
         cancelButton.titleLabel?.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         cancelButton.layer.borderWidth = 0.5
         cancelButton.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
-        beginButton.titleLabel?.text = "시작하기"
+        beginButton.setTitle("시작하기", for: .normal)
         beginButton.titleLabel?.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         beginButton.layer.borderWidth = 0.5
         beginButton.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
