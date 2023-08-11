@@ -19,26 +19,31 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "설정"
-        
+        configureNavigationBar()
         configureView()
         configureTableView()
+    }
+    
+    func configureNavigationBar() {
+        self.title = "설정"
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
     
     func configureView() {
         backView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         settingTableView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
     }
-}
-
-// MARK: Table View
-
-extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func configureTableView() {
         settingTableView.delegate = self
         settingTableView.dataSource = self
         settingTableView.rowHeight = 50
     }
+}
+
+// MARK: Table View
+
+extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return setting.list.count
@@ -68,7 +73,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: NameChangeViewController.identifier) as? NameChangeViewController else { return }
             navigationController?.pushViewController(vc, animated: true)
         } else if row == 1 {
-            
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: SelectionViewController.identifier) as? SelectionViewController else { return }
+            navigationController?.pushViewController(vc, animated: true)
         } else {
             
         }

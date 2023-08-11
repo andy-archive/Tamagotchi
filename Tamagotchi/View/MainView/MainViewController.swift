@@ -16,7 +16,6 @@ class MainViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     var petNumber = 0
 
-    @IBOutlet var backView: UIView!
     @IBOutlet weak var messageBackView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageBubbleImageView: UIImageView!
@@ -32,15 +31,16 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "대장님의 다마고치"
-
         guard let virtualPet else { return }
 
-        let settingImage = UIImage(systemName: "person.circle")
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(settingButtonClicked))
-
+        configureNavigationBar()
         configureView(virtualPet: virtualPet)
+    }
+    
+    func configureNavigationBar() {
+        self.title = "대장님의 다마고치"
+        let settingImage = UIImage(systemName: "person.circle")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(settingButtonClicked))
     }
 
     @IBAction func riceGrainTapped(_ sender: UIButton) {
@@ -172,7 +172,7 @@ extension MainViewController {
         riceGrainTextField.placeholder = "밥 줘"
         waterDropTextField.placeholder = "물 줘"
 
-        backView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
 
         messageBackView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
 

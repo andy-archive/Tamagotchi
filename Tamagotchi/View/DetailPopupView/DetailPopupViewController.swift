@@ -44,7 +44,10 @@ class DetailPopupViewController: UIViewController {
         vc.virtualPet = virtualPet
         vc.petNumber = petNumber
         
-        navigationController?.pushViewController(vc, animated: true)
+        let nav = UINavigationController(rootViewController: vc)
+        
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: false)
     }
     
     func configureDetailPopupView(virtualPet: VirtualPet) {

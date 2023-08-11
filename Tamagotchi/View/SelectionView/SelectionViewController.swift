@@ -13,6 +13,7 @@ class SelectionViewController: UIViewController {
     
     var virtualPetInfo = VirtualPetInfo()
     
+    @IBOutlet weak var selectionNavigationBar: UINavigationBar!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var virtualPetCollectionView: UICollectionView!
     
@@ -85,11 +86,9 @@ extension SelectionViewController: UICollectionViewDelegate, UICollectionViewDat
             present(alert, animated: true)
         }
         
-        let nav = UINavigationController(rootViewController: vc)
+        vc.modalPresentationStyle = .custom
         
-        nav.modalPresentationStyle = .custom
-        
-        present(nav, animated: true)
+        present(vc, animated: true)
     }
     
     
