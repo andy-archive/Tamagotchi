@@ -12,6 +12,7 @@ class SettingViewController: UIViewController {
     static let identifier = "SettingViewController"
     
     var setting = SettingInfo()
+    let userDefaults = UserDefaults.standard
     
     @IBOutlet var backView: UIView!
     @IBOutlet weak var settingTableView: UITableView!
@@ -22,6 +23,12 @@ class SettingViewController: UIViewController {
         configureNavigationBar()
         configureView()
         configureTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        settingTableView.reloadData()
     }
     
     func configureNavigationBar() {

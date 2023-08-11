@@ -171,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR4-SP-WgR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3069" y="-2"/>
+            <point key="canvasLocation" x="2981" y="-2"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Uq1-u7-gB0">
@@ -331,7 +331,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2257" y="735"/>
+            <point key="canvasLocation" x="2257" y="694"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="ZJw-tI-Ia8">
@@ -421,7 +421,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpT-Ud-7uD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7206.8702290076335" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="2981" y="694"/>
         </scene>
         <!--Name Change View Controller-->
         <scene sceneID="GTb-yl-XpP">
@@ -452,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iy2-vG-zVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3747" y="837"/>
+            <point key="canvasLocation" x="3692" y="694"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A6v-oO-4sJ">

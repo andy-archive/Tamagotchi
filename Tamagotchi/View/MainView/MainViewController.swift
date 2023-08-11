@@ -12,7 +12,6 @@ class MainViewController: UIViewController {
     static let identifier = "MainViewController"
     
     var virtualPet: VirtualPet?
-    
     let userDefaults = UserDefaults.standard
     var petNumber = 0
 
@@ -27,7 +26,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var waterDropTextField: UITextField!
     @IBOutlet weak var riceGrainButton: UIButton!
     @IBOutlet weak var waterDropButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,8 +36,14 @@ class MainViewController: UIViewController {
         configureView(virtualPet: virtualPet)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let ownerName = userDefaults.string(forKey: "ownerName") ?? "대장님"
+        self.title = "\(ownerName)님의 다마고치"
+    }
+    
     func configureNavigationBar() {
-        self.title = "대장님의 다마고치"
         let settingImage = UIImage(systemName: "person.circle")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(settingButtonClicked))
     }
@@ -166,7 +171,7 @@ extension MainViewController {
     func configureView(virtualPet: VirtualPet) {
         messageLabel.text = "안녕하세요"
         messageBubbleImageView.image = UIImage(named: "bubble")
-        virtualPetImageView.image = UIImage(named: virtualPet.presentImage)
+        virtualPetImageView.image = UIImage(named: "\(petNumber)-\(userDefaults.integer(forKey: "\(petNumber) image"))")
         nameLabel.text = virtualPet.name
         statLabel.text = "Lv.\(userDefaults.integer(forKey: "\(petNumber) level")) | 밥알 \(userDefaults.integer(forKey: "\(petNumber) riceGrainCount"))개 | 물방울 \(userDefaults.integer(forKey: "\(petNumber) waterDropCount"))개"
         riceGrainTextField.placeholder = "밥 줘"

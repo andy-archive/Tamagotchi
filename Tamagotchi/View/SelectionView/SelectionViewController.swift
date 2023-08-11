@@ -12,8 +12,8 @@ class SelectionViewController: UIViewController {
     static let identifier = "SelectionViewController"
     
     var virtualPetInfo = VirtualPetInfo()
+    let userDefaults = UserDefaults.standard
     
-    @IBOutlet weak var selectionNavigationBar: UINavigationBar!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var virtualPetCollectionView: UICollectionView!
     
@@ -28,7 +28,10 @@ class SelectionViewController: UIViewController {
     func configureView() {
         title = "다마고치 선택하기"
         backView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        UserDefaults.standard.set("대장", forKey: "ownerName")
+        
+        if userDefaults.string(forKey: "ownerName") == nil {
+            userDefaults.set("대장", forKey: "ownerName")
+        }
     }
     
     func configureCollectionView() {
