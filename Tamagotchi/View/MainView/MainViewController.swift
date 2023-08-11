@@ -10,9 +10,11 @@ import UIKit
 class MainViewController: UIViewController {
 
     static let identifier = "MainViewController"
-
-    var petNumber = 0
+    
+    var virtualPet: VirtualPet?
+    
     let userDefaults = UserDefaults.standard
+    var petNumber = 0
 
     @IBOutlet var backView: UIView!
     @IBOutlet weak var messageBackView: UIView!
@@ -26,10 +28,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var waterDropTextField: UITextField!
     @IBOutlet weak var riceGrainButton: UIButton!
     @IBOutlet weak var waterDropButton: UIButton!
-
-    var virtualPet: VirtualPet?
-
-    let randomMessage = ["대장님 오늘 과제 하셨어요?", "깃허브 푸시 하셨어요?", "배고파요 :(", "목말라요 ㅠㅠ", "밥 주세요 :)", "기분이 좋은 하루에요 XD"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +109,9 @@ extension MainViewController {
         levelCheck()
         virtualPetImageView.image = UIImage(named: "\(petNumber)-\(userDefaults.integer(forKey: "\(petNumber) image"))")
         statLabel.text = "Lv.\(userDefaults.integer(forKey: "\(petNumber) level")) | 밥알 \(userDefaults.integer(forKey: "\(petNumber) riceGrainCount"))개 | 물방울 \(userDefaults.integer(forKey: "\(petNumber) waterDropCount"))개"
+        
+        let ownerName = userDefaults.string(forKey: "ownerName") ?? ""
+        let randomMessage = ["\(ownerName)님 오늘 과제 하셨어요?", "깃허브 푸시 하셨어요?", "배고파요 :(", "목말라요 ㅠㅠ", "밥 주세요 :)", "기분이 좋은 하루에요 XD"]
         messageLabel.text = randomMessage.randomElement() ?? "안녕하세요"
     }
 
@@ -163,7 +164,7 @@ extension MainViewController {
 
 extension MainViewController {
     func configureView(virtualPet: VirtualPet) {
-        messageLabel.text = randomMessage.randomElement() ?? "안녕하세요"
+        messageLabel.text = "안녕하세요"
         messageBubbleImageView.image = UIImage(named: "bubble")
         virtualPetImageView.image = UIImage(named: virtualPet.presentImage)
         nameLabel.text = virtualPet.name

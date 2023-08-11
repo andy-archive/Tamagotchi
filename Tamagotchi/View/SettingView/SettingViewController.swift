@@ -34,12 +34,10 @@ class SettingViewController: UIViewController {
 // MARK: Table View
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func configureTableView() {
         settingTableView.delegate = self
         settingTableView.dataSource = self
-        
-        settingTableView.rowHeight = 40
+        settingTableView.rowHeight = 50
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,16 +51,23 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let row = setting.list[indexPath.row]
         
+        if indexPath.row == 0 {
+            cell.placeholderLabel.text = UserDefaults.standard.string(forKey: "ownerName")
+        } else {
+            cell.placeholderLabel.text = ""
+        }
+        
         cell.configureCell(row: row)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        let row = indexPath.row
+        if row == 0 {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: NameChangeViewController.identifier) as? NameChangeViewController else { return }
             navigationController?.pushViewController(vc, animated: true)
-        } else if indexPath.row == 1 {
+        } else if row == 1 {
             
         } else {
             

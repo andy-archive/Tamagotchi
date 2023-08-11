@@ -19,11 +19,15 @@ class SelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "다마고치 선택하기"
-        backView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        
+        configureView()
         configureCollectionView()
         configureCollectionViewLayout()
+    }
+    
+    func configureView() {
+        title = "다마고치 선택하기"
+        backView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        UserDefaults.standard.set("대장", forKey: "ownerName")
     }
     
     func configureCollectionView() {
