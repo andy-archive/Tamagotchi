@@ -22,11 +22,11 @@ class SelectionViewController: UIViewController {
         title = "다마고치 선택하기"
         backView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
-        configureVirtualPetCollectionView()
-        configureVirtualPetCollectionViewLayout()
+        configureCollectionView()
+        configureCollectionViewLayout()
     }
     
-    func configureVirtualPetCollectionView() {
+    func configureCollectionView() {
         virtualPetCollectionView.delegate = self
         virtualPetCollectionView.dataSource = self
         
@@ -37,7 +37,7 @@ class SelectionViewController: UIViewController {
         virtualPetCollectionView.register(nib, forCellWithReuseIdentifier: VirtualPetCollectionViewCell.identifier)
     }
     
-    func configureVirtualPetCollectionViewLayout() {
+    func configureCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 10
         let width = UIScreen.main.bounds.width - spacing * 4
@@ -73,6 +73,13 @@ extension SelectionViewController: UICollectionViewDelegate, UICollectionViewDat
         
         vc.virtualPet = virtualPetInfo.list[indexPath.row]
         vc.petNumber = indexPath.row + 1
+        
+        if vc.virtualPet?.name == "준비 중입니다" {
+            let alert = UIAlertController(title: "아직 준비 중입니다", message: "다음 다마고치를 기다려주세요!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .default)
+            alert.addAction(ok)
+            present(alert, animated: true)
+        }
         
         let nav = UINavigationController(rootViewController: vc)
         
