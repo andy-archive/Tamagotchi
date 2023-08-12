@@ -12,6 +12,7 @@
 		385A81832A80D62C00A8D72C /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A81812A80D62C00A8D72C /* SettingTableViewCell.swift */; };
 		385A81862A80D6E500A8D72C /* SettingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A81852A80D6E500A8D72C /* SettingInfo.swift */; };
 		385A81892A811A3F00A8D72C /* NameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A81882A811A3F00A8D72C /* NameChangeViewController.swift */; };
+		38C7082A2A875C01005182AE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 38C708292A875C01005182AE /* .gitignore */; };
 		38D431B02A7CD0E8004CFC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431AF2A7CD0E8004CFC5A /* AppDelegate.swift */; };
 		38D431B22A7CD0E8004CFC5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431B12A7CD0E8004CFC5A /* SceneDelegate.swift */; };
 		38D431B72A7CD0E8004CFC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D431B52A7CD0E8004CFC5A /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		385A81812A80D62C00A8D72C /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		385A81852A80D6E500A8D72C /* SettingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfo.swift; sourceTree = "<group>"; };
 		385A81882A811A3F00A8D72C /* NameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeViewController.swift; sourceTree = "<group>"; };
+		38C708292A875C01005182AE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = Tamagotchi/.gitignore; sourceTree = SOURCE_ROOT; };
 		38D431AC2A7CD0E8004CFC5A /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D431AF2A7CD0E8004CFC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38D431B12A7CD0E8004CFC5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				38D431C42A7CD150004CFC5A /* View */,
 				38D431B82A7CD0E9004CFC5A /* Assets.xcassets */,
 				38D431BD2A7CD0E9004CFC5A /* Info.plist */,
+				38C708292A875C01005182AE /* .gitignore */,
 			);
 			path = Tamagotchi;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C7082A2A875C01005182AE /* .gitignore in Resources */,
 				38D431BC2A7CD0E9004CFC5A /* LaunchScreen.storyboard in Resources */,
 				38D431DF2A7D2165004CFC5A /* VirtualPetCollectionViewCell.xib in Resources */,
 				38D431B92A7CD0E9004CFC5A /* Assets.xcassets in Resources */,
