@@ -82,8 +82,28 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         } else if row == 1 {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: SelectionViewController.identifier) as? SelectionViewController else { return }
             navigationController?.pushViewController(vc, animated: true)
-        } else {
+        } else if row == 2 {
+            // MARK: 초기화
+            let alert = UIAlertController(title: "정말로 초기화 하겠습니까?", message: "저장한 데이터를 다시 복구할 수 없습니다.", preferredStyle: .alert)
             
+            let cancel = UIAlertAction(title: "취소", style: .cancel)
+            let reset = UIAlertAction(title: "초기화", style: .destructive) { [self] action in
+                for key in UserDefaults.standard.dictionaryRepresentation().keys {
+                    UserDefaults.standard.removeObject(forKey: key.description)
+                }
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                guard let vc = sb.instantiateViewController(withIdentifier: SelectionViewController.identifier) as? SelectionViewController else { return }
+                let nav = UINavigationController(rootViewController: vc)
+                nav.modalPresentationStyle = .fullScreen
+                present(nav, animated: false)
+            }
+            
+            alert.addAction(cancel)
+            alert.addAction(reset)
+            
+            present(alert, animated: true)
+        } else {
+            return
         }
     }
 }
