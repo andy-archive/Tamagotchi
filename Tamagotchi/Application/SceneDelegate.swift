@@ -24,8 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if isPetSelected == false {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: SelectionViewController.identifier) as? SelectionViewController else { return }
-            
-            window?.rootViewController = vc
+            let nav = UINavigationController(rootViewController: vc)
+            vc.navigationItem.title = "다마고치 선택하기"
+            window?.rootViewController = nav
         } else {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             guard let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }

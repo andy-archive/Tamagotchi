@@ -77,7 +77,12 @@ class DetailPopupViewController: UIViewController {
         cancelButton.layer.borderWidth = 0.5
         cancelButton.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
-        beginButton.setTitle("시작하기", for: .normal)
+        if UserDefaults.standard.bool(forKey: "isPetSelected") {
+            beginButton.setTitle("선택하기", for: .normal)
+        } else {
+            beginButton.setTitle("시작하기", for: .normal)
+        }
+        
         beginButton.titleLabel?.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         beginButton.layer.borderWidth = 0.5
         beginButton.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
