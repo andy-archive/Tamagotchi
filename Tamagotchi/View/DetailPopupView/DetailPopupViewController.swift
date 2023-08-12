@@ -11,7 +11,8 @@ class DetailPopupViewController: UIViewController {
     
     static let identifier = "DetailPopupViewController"
     
-    var petNumber = 0
+    var virtualPet: VirtualPet?
+    let petNumber = UserDefaults.standard.integer(forKey: "petNumber")
     
     @IBOutlet var backView: UIView!
     @IBOutlet weak var popupBackView: UIView!
@@ -24,7 +25,6 @@ class DetailPopupViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var beginButton: UIButton!
     
-    var virtualPet: VirtualPet?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,10 @@ class DetailPopupViewController: UIViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
         
         vc.virtualPet = virtualPet
-        vc.petNumber = petNumber
+        UserDefaults.standard.set(true, forKey: "isPetSelected")
+        UserDefaults.standard.set(petNumber, forKey: "selectedPetNumber")
         
         let nav = UINavigationController(rootViewController: vc)
-        
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: false)
     }

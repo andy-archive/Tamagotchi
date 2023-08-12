@@ -80,7 +80,7 @@ extension SelectionViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailPopupViewController.identifier) as? DetailPopupViewController else { return }
         
         vc.virtualPet = virtualPetInfo.list[indexPath.row]
-        vc.petNumber = indexPath.row + 1
+        userDefaults.set(indexPath.row+1, forKey: "petNumber")
         
         if vc.virtualPet?.name == "준비 중입니다" {
             let alert = UIAlertController(title: "아직 준비 중입니다", message: "다음 다마고치를 기다려주세요!", preferredStyle: .alert)

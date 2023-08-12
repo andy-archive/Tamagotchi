@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     
     var virtualPet: VirtualPet?
     let userDefaults = UserDefaults.standard
-    var petNumber = 0
+    let petNumber = UserDefaults.standard.integer(forKey: "petNumber")
 
     @IBOutlet weak var messageBackView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
