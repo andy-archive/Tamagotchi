@@ -9,8 +9,6 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell {
     
-    static let identifier = "SettingTableViewCell"
-    
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var settingImageView: UIImageView!
     @IBOutlet weak var settingTitleLabel: UILabel!

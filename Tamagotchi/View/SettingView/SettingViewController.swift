@@ -9,8 +9,6 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
-    static let identifier = "SettingViewController"
-    
     var setting = SettingInfo()
     let userDefaults = UserDefaults.standard
     

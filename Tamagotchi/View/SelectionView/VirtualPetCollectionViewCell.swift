@@ -9,8 +9,6 @@ import UIKit
 
 class VirtualPetCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = "VirtualPetCollectionViewCell"
-    
     @IBOutlet weak var cellBackView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabelBackView: UIView!

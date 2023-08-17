@@ -8,8 +8,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    static let identifier = "MainViewController"
     
     var virtualPet: VirtualPet?
     let userDefaults = UserDefaults.standard

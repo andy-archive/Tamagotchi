@@ -9,8 +9,6 @@ import UIKit
 
 class DetailPopupViewController: UIViewController {
     
-    static let identifier = "DetailPopupViewController"
-    
     var virtualPet: VirtualPet?
     let petNumber = UserDefaults.standard.integer(forKey: "petNumber")
     

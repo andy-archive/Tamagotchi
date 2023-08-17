@@ -9,8 +9,6 @@ import UIKit
 
 class SelectionViewController: UIViewController {
     
-    static let identifier = "SelectionViewController"
-    
     var virtualPetInfo = VirtualPetInfo()
     let userDefaults = UserDefaults.standard
     

@@ -8,8 +8,6 @@
 import UIKit
 
 class NameChangeViewController: UIViewController {
-
-    static let identifier = "NameChangeViewController"
     
     @IBOutlet var backView: UIView!
     @IBOutlet weak var ownerNameTextField: UITextField!

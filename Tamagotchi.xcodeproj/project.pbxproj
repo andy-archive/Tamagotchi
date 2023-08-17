@@ -12,6 +12,7 @@
 		385A81832A80D62C00A8D72C /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A81812A80D62C00A8D72C /* SettingTableViewCell.swift */; };
 		385A81862A80D6E500A8D72C /* SettingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A81852A80D6E500A8D72C /* SettingInfo.swift */; };
 		385A81892A811A3F00A8D72C /* NameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A81882A811A3F00A8D72C /* NameChangeViewController.swift */; };
+		38C6C3A52A8E51B200E298FD /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C6C3A42A8E51B200E298FD /* ReusableViewProtocol.swift */; };
 		38C7082A2A875C01005182AE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 38C708292A875C01005182AE /* .gitignore */; };
 		38D431B02A7CD0E8004CFC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431AF2A7CD0E8004CFC5A /* AppDelegate.swift */; };
 		38D431B22A7CD0E8004CFC5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D431B12A7CD0E8004CFC5A /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		385A81812A80D62C00A8D72C /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		385A81852A80D6E500A8D72C /* SettingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfo.swift; sourceTree = "<group>"; };
 		385A81882A811A3F00A8D72C /* NameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeViewController.swift; sourceTree = "<group>"; };
+		38C6C3A42A8E51B200E298FD /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		38C708292A875C01005182AE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = Tamagotchi/.gitignore; sourceTree = SOURCE_ROOT; };
 		38D431AC2A7CD0E8004CFC5A /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D431AF2A7CD0E8004CFC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				38D431D42A7D1958004CFC5A /* Owner.swift */,
 				385A817D2A80D51700A8D72C /* Setting.swift */,
 				385A81852A80D6E500A8D72C /* SettingInfo.swift */,
+				38C6C3A42A8E51B200E298FD /* ReusableViewProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				385A817E2A80D51700A8D72C /* Setting.swift in Sources */,
 				38D431DE2A7D2165004CFC5A /* VirtualPetCollectionViewCell.swift in Sources */,
 				38D431E52A7E2AD1004CFC5A /* MainViewController.swift in Sources */,
+				38C6C3A52A8E51B200E298FD /* ReusableViewProtocol.swift in Sources */,
 				38D431CD2A7D12D8004CFC5A /* VirtualPet.swift in Sources */,
 				385A81862A80D6E500A8D72C /* SettingInfo.swift in Sources */,
 				38D431D32A7D17A5004CFC5A /* VirtualPetInfo.swift in Sources */,
